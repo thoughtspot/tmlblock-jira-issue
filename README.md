@@ -43,6 +43,6 @@ With the JIRA TML Blocks, managers have access to the huge wealth of operational
 ## Issue Management Liveboard 
 
 <img width="857" alt="Screen Shot 2022-04-13 at 11 23 00 PM" src="https://user-images.githubusercontent.com/102629468/163326204-27258f2f-e803-47e7-b871-e8c26f426df0.png">
-<img width="1074" alt="Screen Shot 2022-04-13 at 11 23 08 PM" src="https://user-images.githubusercontent.com/102629468/163326210-3fe596f4-8064-416a-914b-6d9b5d44598b.png">
-<img width="1031" alt="Screen Shot 2022-04-13 at 11 23 19 PM" src="https://user-images.githubusercontent.com/102629468/163326212-a4599568-1b68-4f7c-aa8d-f9ba4a4113e6.png">
+<img width="857" alt="Screen Shot 2022-04-13 at 11 23 08 PM" src="https://user-images.githubusercontent.com/102629468/163326210-3fe596f4-8064-416a-914b-6d9b5d44598b.png">
+<img width="857" alt="Screen Shot 2022-04-13 at 11 23 19 PM" src="https://user-images.githubusercontent.com/102629468/163326212-a4599568-1b68-4f7c-aa8d-f9ba4a4113e6.png">
 
