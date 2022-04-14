@@ -38,7 +38,7 @@ With the JIRA TML Blocks, managers have access to the huge wealth of operational
 - Import the workshop zip "JIRA R2 - Issue Management.pinboard (2).tml" into Thoughtspot. 
 - Import the pinboard zip "JIRA R2.0.worksheet (1).tmlp" into Thoughtspot. 
 
-#Liveboard Screenshots 
+# Liveboard Screenshots 
 
 ## Issue Management Liveboard 
 
