@@ -1,0 +1,799 @@
+pinboard:
+  name: JIRA R2 - Issue Management
+  visualizations:
+  - answer:
+      name: Open Issues
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      search_query: "[Assignee] [Issue Status] != 'done' unique count [Issue Key]"
+      answer_columns:
+      - name: Issue Status
+      - name: Unique Number of Issue Key
+      - name: Assignee
+      table:
+        table_columns:
+        - column_id: Assignee
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Unique Number of Issue Key
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Assignee
+        - Unique Number of Issue Key
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: PIE
+        chart_columns:
+        - column_id: Assignee
+        - column_id: Unique Number of Issue Key
+        axis_configs:
+        - x:
+          - Assignee
+          y:
+          - Unique Number of Issue Key
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"4daebd81-1334-4ecf-988f-62eeccefdad0\":{\"linkedColumns\":[\"Unique Number of Issue Key\"],\"axisType\":\"Y\",\"isOpposite\":false,\"name\":\"Issue Count\"},\"6ec44ac5-5062-4dfa-a068-998804df9c3d\":{\"linkedColumns\":[\"Assignee\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Unique Number of Issue Key\":\"#2E75F0\",\"chet\":\"#8C62F5\",\"domenico rutigliano\":\"#56D3A8\",\"jacob gardiner\":\"#06BF7F\",\"james harper\":\"#FCD977\",\"lukasz dev\":\"#FCC838\",\"mars xu\":\"#82DFE9\",\"mxu\":\"#48D1E0\",\"nick wienholt\":\"#71A1F4\",\"rich o\\u0027brien\":\"#2E75F0\",\"{Null}\":\"#721F27\",\"adham dannaway\":\"#F47E89\",\"ahsan rauf\":\"#B6313E\",\"aleem latif\":\"#F9B3B9\",\"andrea long\":\"#F04152\",\"belinda immerz\":\"#2F3947\",\"biny alias\":\"#A2ACBA\",\"cassie tiroshi\":\"#47515F\",\"charissa ramirez\":\"#BEC6D0\",\"christopher brew\":\"#747E8C\",\"christopher.whitmore-beirne\":\"#7A3D1F\",\"courtney brown\":\"#FFA97E\",\"dan.caleo\":\"#C26232\",\"daniel barrett\":\"#FFCCB3\",\"danielle azar\":\"#FF8142\",\"david alonso love\":\"#422E75\",\"dominic hebert\":\"#B094F8\",\"elham\":\"#6A4ABA\",\"erica rubic\":\"#D1C0FB\",\"former user\":\"#8C62F5\",\"garry lau\":\"#025B3C\",\"geordie mcnabney\":\"#56D3A8\",\"hanan ramadan\":\"#049160\",\"harriet stockley\":\"#9BE5CB\",\"huck.wang\":\"#06BF7F\",\"isabel lau\":\"#785F1A\",\"james ellis\":\"#FCD977\",\"janine dwyer\":\"#BF982A\",\"jennifer hamilton\":\"#FDE9AF\",\"jennifer weiley\":\"#FCC838\",\"justin lucas\":\"#22636B\",\"kate moore\":\"#82DFE9\",\"ken mortimer\":\"#369FAA\",\"khurram.bashir\":\"#B5ECF2\",\"kimberly richards\":\"#48D1E0\",\"leah.barone\":\"#163772\",\"leszek.ratajczak\":\"#71A1F4\",\"maria leonardis\":\"#2359B6\",\"marsha white\":\"#ABC7F9\",\"megan tiatia\":\"#2E75F0\",\"melinda france\":\"#721F27\",\"melissa scully\":\"#F47E89\",\"michael thompson\":\"#B6313E\",\"mohana sigilisetti\":\"#F9B3B9\",\"mowena wilkins\":\"#F04152\",\"nathan ter bogt\":\"#2F3947\",\"nick.rafferty\":\"#A2ACBA\",\"nicola hardy\":\"#47515F\",\"orkun.camgoz\":\"#BEC6D0\",\"paul casey\":\"#747E8C\",\"paul chan\":\"#7A3D1F\",\"pip armstrong\":\"#FFA97E\",\"rachel bernauer\":\"#C26232\",\"rajesh sheoran\":\"#FFCCB3\",\"richard pateman\":\"#FF8142\",\"rika johnander\":\"#422E75\",\"ruth mcafee\":\"#B094F8\",\"sabbir subhan\":\"#6A4ABA\",\"shona kervinen\":\"#D1C0FB\",\"shona.kervinen\":\"#8C62F5\",\"si hobbs\":\"#025B3C\",\"sibylla\":\"#56D3A8\",\"sibylla macdonald\":\"#049160\",\"sow behl\":\"#9BE5CB\",\"stephanie marchant\":\"#06BF7F\",\"steven.thorne\":\"#785F1A\",\"tony comben\":\"#FCD977\",\"vid.devaraj\":\"#BF982A\",\"viola wong\":\"#FDE9AF\",\"zoe kleeborn\":\"#FCC838\"},\"version\":\"V3\",\"columnProperties\":{\"Assignee\":{},\"Unique Number of Issue Key\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_1
+  - answer:
+      name: Open Issues by Status
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      search_query: "[Assignee] [Issue Status] != 'done' unique count [Issue Key] [Issue Status]"
+      answer_columns:
+      - name: Issue Status
+      - name: Unique Number of Issue Key
+      - name: Assignee
+      table:
+        table_columns:
+        - column_id: Assignee
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Issue Status
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Unique Number of Issue Key
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Assignee
+        - Issue Status
+        - Unique Number of Issue Key
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: STACKED_COLUMN
+        chart_columns:
+        - column_id: Assignee
+        - column_id: Issue Status
+        - column_id: Unique Number of Issue Key
+        axis_configs:
+        - x:
+          - Assignee
+          y:
+          - Unique Number of Issue Key
+          color:
+          - Issue Status
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"responsiveLayoutPreference\":3.0,\"chartSpecific\":{}},\"axisProperties\":{\"75a4256d-381d-499d-9c8a-e50e52ed5b17\":{\"linkedColumns\":[\"Unique Number of Issue Key\"],\"axisType\":\"Y\",\"isOpposite\":false,\"name\":\"Issue Count\"},\"7025b202-99e4-4122-b1e6-ebf9522eb499\":{\"linkedColumns\":[\"Assignee\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"in progress\":\"#48D1E0\",\"to do\":\"#2E75F0\",\"blocked\":\"#06BF7F\",\"qa\":\"#06BF7F\"},\"version\":\"V3\",\"columnProperties\":{\"Assignee\":{},\"Issue Status\":{},\"Unique Number of Issue Key\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_2
+  - answer:
+      name: Open Issues Average Days Open by Date Created
+      description: "Excludes issues that are done. Issues are normally assigned to the client when done, so including these would skew the data."
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      search_query: "[Issue Date Created] [Issue Date Created].weekly sort by [Issue Date Created] [Issue Date Created].weekly [Days Open] [Issue Status] != 'done' [Assignee]"
+      answer_columns:
+      - name: Week(Issue Date Created)
+      - name: Average Days Open
+      - name: Assignee
+      - name: Issue Status
+      table:
+        table_columns:
+        - column_id: Week(Issue Date Created)
+          headline_aggregation: MIN-MAX
+        - column_id: Assignee
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Average Days Open
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Week(Issue Date Created)
+        - Assignee
+        - Average Days Open
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: Week(Issue Date Created)
+        - column_id: Assignee
+        - column_id: Average Days Open
+        axis_configs:
+        - x:
+          - Week(Issue Date Created)
+          y:
+          - Average Days Open
+          color:
+          - Assignee
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"responsiveLayoutPreference\":3.0,\"chartSpecific\":{}},\"axisProperties\":{\"d336efb7-3d4c-4a07-8e64-0d135d37c34c\":{\"linkedColumns\":[\"Average Days Open\"],\"axisType\":\"Y\",\"isOpposite\":false},\"3edaf06f-da90-4ae2-b61c-427034734137\":{\"linkedColumns\":[\"Week(Issue Date Created)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"{null}\":\"#721F27\",\"adham dannaway\":\"#F47E89\",\"ahsan rauf\":\"#B6313E\",\"aleem latif\":\"#F9B3B9\",\"andrea long\":\"#F04152\",\"belinda immerz\":\"#2F3947\",\"biny alias\":\"#A2ACBA\",\"cassie tiroshi\":\"#47515F\",\"charissa ramirez\":\"#BEC6D0\",\"christopher brew\":\"#747E8C\",\"christopher.whitmore-beirne\":\"#7A3D1F\",\"courtney brown\":\"#FFA97E\",\"dan.caleo\":\"#C26232\",\"daniel barrett\":\"#FFCCB3\",\"danielle azar\":\"#FF8142\",\"david alonso love\":\"#422E75\",\"dominic hebert\":\"#B094F8\",\"elham\":\"#6A4ABA\",\"erica rubic\":\"#D1C0FB\",\"former user\":\"#8C62F5\",\"garry lau\":\"#025B3C\",\"geordie mcnabney\":\"#56D3A8\",\"hanan ramadan\":\"#049160\",\"harriet stockley\":\"#9BE5CB\",\"huck.wang\":\"#06BF7F\",\"isabel lau\":\"#785F1A\",\"james ellis\":\"#FCD977\",\"janine dwyer\":\"#BF982A\",\"jennifer hamilton\":\"#FDE9AF\",\"jennifer weiley\":\"#FCC838\",\"justin lucas\":\"#22636B\",\"kate moore\":\"#82DFE9\",\"ken mortimer\":\"#369FAA\",\"khurram.bashir\":\"#B5ECF2\",\"kimberly richards\":\"#48D1E0\",\"leah.barone\":\"#163772\",\"leszek.ratajczak\":\"#71A1F4\",\"maria leonardis\":\"#2359B6\",\"marsha white\":\"#ABC7F9\",\"megan tiatia\":\"#2E75F0\",\"melinda france\":\"#721F27\",\"melissa scully\":\"#F47E89\",\"michael thompson\":\"#B6313E\",\"mohana sigilisetti\":\"#F9B3B9\",\"mowena wilkins\":\"#F04152\",\"nathan ter bogt\":\"#2F3947\",\"nick.rafferty\":\"#A2ACBA\",\"nicola hardy\":\"#47515F\",\"orkun.camgoz\":\"#BEC6D0\",\"paul casey\":\"#747E8C\",\"paul chan\":\"#7A3D1F\",\"pip armstrong\":\"#FFA97E\",\"rachel bernauer\":\"#C26232\",\"rajesh sheoran\":\"#FFCCB3\",\"richard pateman\":\"#FF8142\",\"rika johnander\":\"#422E75\",\"ruth mcafee\":\"#B094F8\",\"sabbir subhan\":\"#6A4ABA\",\"shona kervinen\":\"#D1C0FB\",\"shona.kervinen\":\"#8C62F5\",\"si hobbs\":\"#025B3C\",\"sibylla\":\"#56D3A8\",\"sibylla macdonald\":\"#049160\",\"sow behl\":\"#9BE5CB\",\"stephanie marchant\":\"#06BF7F\",\"steven.thorne\":\"#785F1A\",\"tony comben\":\"#FCD977\",\"vid.devaraj\":\"#BF982A\",\"viola wong\":\"#FDE9AF\",\"zoe kleeborn\":\"#FCC838\"},\"version\":\"V3\",\"columnProperties\":{\"Week(Issue Date Created)\":{},\"Assignee\":{},\"Average Days Open\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_3
+  - answer:
+      name: Days Open and Days to Close by Issue Created Date
+      description: Days Open includes open and done issues. Days to Close only includes the done items. If an issue is done then Days to Close and Days Open are the same. If there are a small number of open tickets the Days Open and Days to Close values will be similar.
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      search_query: "[Days To Close] [Issue Date Created] [Issue Date Created].weekly [Days Open]"
+      answer_columns:
+      - name: Average Days Open
+      - name: Average Days To Close
+      - name: Week(Issue Date Created)
+      table:
+        table_columns:
+        - column_id: Week(Issue Date Created)
+          headline_aggregation: MIN-MAX
+        - column_id: Average Days To Close
+          headline_aggregation: TABLE_AGGR
+        - column_id: Average Days Open
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Week(Issue Date Created)
+        - Average Days To Close
+        - Average Days Open
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Average Days To Close
+        - column_id: Week(Issue Date Created)
+        - column_id: Average Days Open
+        axis_configs:
+        - x:
+          - Week(Issue Date Created)
+          y:
+          - Average Days To Close
+          - Average Days Open
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"responsiveLayoutPreference\":3.0,\"chartSpecific\":{}},\"axisProperties\":{\"afc1fbe4-1abd-4aeb-828e-56c40bd9b0fd\":{\"linkedColumns\":[\"Average Days To Close\",\"Average Days Open\"],\"axisType\":\"Y\",\"isOpposite\":false},\"c6cdfbcf-31d9-4647-9731-ebb3e8aaaa64\":{\"linkedColumns\":[\"Week(Issue Date Created)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Average Days To Close\":\"#2E75F0\",\"Average Days Open\":\"#48D1E0\"},\"version\":\"V3\",\"columnProperties\":{\"Week(Issue Date Created)\":{},\"Average Days To Close\":{},\"Average Days Open\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_4
+  - answer:
+      name: Issue by Date Created
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      search_query: "[Issue Date Created] [Issue Date Created].weekly unique count [Issue Key]"
+      answer_columns:
+      - name: Unique Number of Issue Key
+      - name: Week(Issue Date Created)
+      table:
+        table_columns:
+        - column_id: Week(Issue Date Created)
+          headline_aggregation: MIN-MAX
+        - column_id: Unique Number of Issue Key
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Week(Issue Date Created)
+        - Unique Number of Issue Key
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Unique Number of Issue Key
+        - column_id: Week(Issue Date Created)
+        axis_configs:
+        - x:
+          - Week(Issue Date Created)
+          y:
+          - Unique Number of Issue Key
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"a61da400-3158-418a-a05d-835e075ff147\":{\"linkedColumns\":[\"Unique Number of Issue Key\"],\"axisType\":\"Y\",\"isOpposite\":false,\"name\":\"Number of Issues\"},\"d416c432-c510-4bd3-9581-2abd5d778908\":{\"linkedColumns\":[\"Week(Issue Date Created)\"],\"axisType\":\"X\",\"name\":\"Date Created\"}},\"systemSeriesColors\":{\"Unique Number of Issue Key\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"Week(Issue Date Created)\":{},\"Unique Number of Issue Key\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_5
+  - answer:
+      name: Issue Count by Project and Date Created
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      search_query: "[Issue Date Created] [Issue Date Created].weekly unique count [Issue Key] [Project Name] [Project Name] != '{null}' 'activateuts' 'clim' 'crownlands' 'dcs - thoughtspot' 'dpi climate change research strategy' 'dpi researcher profiles' 'dpi story' 'drought hub' 'education' 'harper stone' 'industry nsw' 'james actions' 'jess' 'jess tasks' 'marine estate authority website' 'mission biosecurity' 'norton project' 'ombo-discovery' 'psc - thoughtspot' 'sharksmart' 'snowyhydro' 'tocal'"
+      answer_columns:
+      - name: Project Name
+      - name: Unique Number of Issue Key
+      - name: Week(Issue Date Created)
+      table:
+        table_columns:
+        - column_id: Week(Issue Date Created)
+          headline_aggregation: MIN-MAX
+        - column_id: Project Name
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Unique Number of Issue Key
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Week(Issue Date Created)
+        - Project Name
+        - Unique Number of Issue Key
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: STACKED_AREA
+        chart_columns:
+        - column_id: Week(Issue Date Created)
+        - column_id: Project Name
+        - column_id: Unique Number of Issue Key
+        axis_configs:
+        - x:
+          - Week(Issue Date Created)
+          y:
+          - Unique Number of Issue Key
+          color:
+          - Project Name
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"responsiveLayoutPreference\":3.0,\"chartSpecific\":{}},\"axisProperties\":{\"be9ad869-55df-4f02-8afb-23ffbbde5a5c\":{\"linkedColumns\":[\"Unique Number of Issue Key\"],\"axisType\":\"Y\",\"isOpposite\":false,\"name\":\"Issue Count\"},\"926a3d0a-3e91-4758-af38-dc76e428fa00\":{\"linkedColumns\":[\"Week(Issue Date Created)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"activateuts\":\"#F47E89\",\"activateuts_servicepack_190\":\"#B6313E\",\"clim\":\"#F9B3B9\",\"climate branch support pack (21hrs)\":\"#F04152\",\"climate branch uat\":\"#2F3947\",\"clm service requests\":\"#A2ACBA\",\"crown land managers uat\":\"#47515F\",\"crownlands\":\"#BEC6D0\",\"dcs\":\"#747E8C\",\"dcs - thoughtspot\":\"#7A3D1F\",\"dpi - google data studio\":\"#FFA97E\",\"dpi climate change research strategy\":\"#C26232\",\"dpi researcher profiles\":\"#FFCCB3\",\"dpi service requests\":\"#FF8142\",\"dpi stories uat\":\"#422E75\",\"dpi story\":\"#B094F8\",\"drought hub\":\"#6A4ABA\",\"droughthub service pack - 53hr\":\"#D1C0FB\",\"droughthub uat\":\"#8C62F5\",\"education\":\"#025B3C\",\"harper stone\":\"#56D3A8\",\"industry nsw\":\"#049160\",\"james actions\":\"#9BE5CB\",\"jess\":\"#06BF7F\",\"jess tasks\":\"#785F1A\",\"marine estate authority website\":\"#FCD977\",\"marine uat\":\"#BF982A\",\"mission biosecurity\":\"#FDE9AF\",\"mission biosecurity service requests - 72 hrs\":\"#FCC838\",\"norton project\":\"#22636B\",\"nrar decision tree project\":\"#82DFE9\",\"ombo-discovery\":\"#369FAA\",\"psc - thoughtspot\":\"#B5ECF2\",\"sharksmart\":\"#48D1E0\",\"sharksmart service requests - 79hr\":\"#163772\",\"snowyhydro\":\"#71A1F4\",\"tocal\":\"#2359B6\",\"tocal service requests -10\":\"#ABC7F9\",\"tocal_uat\":\"#2E75F0\",\"agile transformation\":\"#FFA97E\",\"customer experience\":\"#C26232\",\"deployments  **old board, do not use **\":\"#FFCCB3\",\"discovery channel\":\"#FF8142\",\"external dev\":\"#B094F8\",\"mh@w\":\"#6A4ABA\",\"optimise team\":\"#D1C0FB\",\"pault2\":\"#8C62F5\",\"platform team\":\"#56D3A8\",\"salsa verde\":\"#049160\",\"team vaccine\":\"#9BE5CB\",\"test tsr story import\":\"#06BF7F\",\"the goats\":\"#FCD977\",\"tnt\":\"#BF982A\",\"z_archive_1cx tsr\":\"#FDE9AF\",\"z_archive_all stars\":\"#FCC838\",\"z_archive_beta testing\":\"#82DFE9\",\"z_archive_covid19 - do not delete\":\"#369FAA\",\"z_archive_dcs corporate\":\"#B5ECF2\",\"z_archive_navigation \\u0026 style guide\":\"#48D1E0\",\"z_archive_nsw.gov.au program reporting and assurance\":\"#71A1F4\",\"z_archive_nswgov alpha\":\"#2359B6\",\"z_archive_the beehive\":\"#ABC7F9\",\"z_archive_ways of working\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"Week(Issue Date Created)\":{},\"Project Name\":{},\"Unique Number of Issue Key\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_6
+  - answer:
+      name: Project Days Active by Project Name
+      description: Number of days between the first issue created and the last issue created. Have excluded internal projects and BAU/Service Packs
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      search_query: "[Project Name] [Project Days Active] sort by [Project Days Active] descending [Project Name] != '{null}' 'education' 'harper stone' 'james actions' 'industry nsw' 'jess tasks' 'jess' 'psc - thoughtspot' 'snowyhydro' 'activateuts_servicepack_190' 'climate branch support pack (21hrs)' 'droughthub service pack - 53hr' 'mission biosecurity service requests - 72 hrs' 'sharksmart service requests - 79hr' 'tocal service requests -10' 'clm service requests' 'activateuts'"
+      answer_columns:
+      - name: Project Name
+      - name: Project Days Active
+      table:
+        table_columns:
+        - column_id: Project Name
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Project Days Active
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Project Name
+        - Project Days Active
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: Project Days Active
+        - column_id: Project Name
+        axis_configs:
+        - x:
+          - Project Name
+          y:
+          - Project Days Active
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"ec9541eb-6bc3-43e5-ba64-81c62df378b4\":{\"linkedColumns\":[\"Project Days Active\"],\"axisType\":\"Y\",\"isOpposite\":false},\"36075fd3-b7d2-4c3d-b2fe-930f505ec513\":{\"linkedColumns\":[\"Project Name\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Project Days Active\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"Project Name\":{},\"Project Days Active\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_7
+  - answer:
+      name: Bug to All Tasks Ratio
+      description: Percentage of bugs to all other issue types. If the issue types are being used correctly will give an indication of project quality for each project.
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      formulas:
+      - id: Bug Counter
+        name: Bug Counter
+        expr: "if ( [Issue Type] = 'bug' ) then 1 else 0"
+      - id: Non-bug Counter
+        name: Non-bug Counter
+        expr: "if ( [Issue Type] = 'bug' ) then 0 else 1"
+      search_query: "[Project Name] [Bug Counter] [Non-bug Counter]"
+      answer_columns:
+      - name: Project Name
+      - name: Total Bug Counter
+      - name: Total Non-bug Counter
+      table:
+        table_columns:
+        - column_id: Project Name
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Total Bug Counter
+          headline_aggregation: TABLE_AGGR
+        - column_id: Total Non-bug Counter
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Project Name
+        - Total Bug Counter
+        - Total Non-bug Counter
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: STACKED_COLUMN
+        chart_columns:
+        - column_id: Project Name
+        - column_id: Total Bug Counter
+        - column_id: Total Non-bug Counter
+        axis_configs:
+        - x:
+          - Project Name
+          y:
+          - Total Bug Counter
+          - Total Non-bug Counter
+        locked: true
+        client_state: "{\"seriesColors\":{\"activateuts\":\"#F47E89\",\"activateuts_servicepack_190\":\"#B6313E\",\"clim\":\"#F9B3B9\",\"climate branch support pack (21hrs)\":\"#F04152\",\"climate branch uat\":\"#2F3947\",\"clm service requests\":\"#A2ACBA\",\"crown land managers uat\":\"#47515F\",\"crownlands\":\"#BEC6D0\",\"dcs\":\"#747E8C\",\"dcs - thoughtspot\":\"#7A3D1F\",\"dpi - google data studio\":\"#FFA97E\",\"dpi climate change research strategy\":\"#C26232\",\"dpi researcher profiles\":\"#FFCCB3\",\"dpi service requests\":\"#FF8142\",\"dpi stories uat\":\"#422E75\",\"dpi story\":\"#B094F8\",\"drought hub\":\"#6A4ABA\",\"droughthub service pack - 53hr\":\"#D1C0FB\",\"droughthub uat\":\"#8C62F5\",\"education\":\"#025B3C\",\"harper stone\":\"#56D3A8\",\"industry nsw\":\"#049160\",\"james actions\":\"#9BE5CB\",\"jess\":\"#06BF7F\",\"jess tasks\":\"#785F1A\",\"marine estate authority website\":\"#FCD977\",\"marine uat\":\"#BF982A\",\"mission biosecurity\":\"#FDE9AF\",\"mission biosecurity service requests - 72 hrs\":\"#FCC838\",\"norton project\":\"#22636B\",\"nrar decision tree project\":\"#82DFE9\",\"ombo-discovery\":\"#369FAA\",\"psc - thoughtspot\":\"#B5ECF2\",\"sharksmart\":\"#48D1E0\",\"sharksmart service requests - 79hr\":\"#163772\",\"snowyhydro\":\"#71A1F4\",\"tocal\":\"#2359B6\",\"tocal service requests -10\":\"#ABC7F9\",\"tocal_uat\":\"#2E75F0\",\"Total Bug Counter\":\"#f04152\",\"0c568520-00d4-4dd7-988f-50e237ebe30f\":\"#2E75F0\",\"Total Non-bug Counter\":\"#2E75F0\"},\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"responsiveLayoutPreference\":3.0,\"chartSpecific\":{\"isStackedAsPercent\":true,\"stackedAsPercentFormat\":{\"category\":\"PERCENTAGE\",\"percentageFormatConfig\":{\"decimals\":2.0},\"isCategoryEditable\":false}},\"isZoomed\":false},\"axisProperties\":{\"e8bbe8db-eafc-4831-9297-4266f1f876a2\":{\"linkedColumns\":[\"Total Bug Counter\",\"Total Non-bug Counter\"],\"axisType\":\"Y\",\"isOpposite\":false},\"7545b87a-ed4c-44ad-982c-465a1f130a8c\":{\"linkedColumns\":[\"Project Name\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"activateuts\":\"#F47E89\",\"activateuts_servicepack_190\":\"#B6313E\",\"clim\":\"#F9B3B9\",\"climate branch support pack (21hrs)\":\"#F04152\",\"climate branch uat\":\"#2F3947\",\"clm service requests\":\"#A2ACBA\",\"crown land managers uat\":\"#47515F\",\"crownlands\":\"#BEC6D0\",\"dcs\":\"#747E8C\",\"dcs - thoughtspot\":\"#7A3D1F\",\"dpi - google data studio\":\"#FFA97E\",\"dpi climate change research strategy\":\"#C26232\",\"dpi researcher profiles\":\"#FFCCB3\",\"dpi service requests\":\"#FF8142\",\"dpi stories uat\":\"#422E75\",\"dpi story\":\"#B094F8\",\"drought hub\":\"#6A4ABA\",\"droughthub service pack - 53hr\":\"#D1C0FB\",\"droughthub uat\":\"#8C62F5\",\"education\":\"#025B3C\",\"harper stone\":\"#56D3A8\",\"industry nsw\":\"#049160\",\"james actions\":\"#9BE5CB\",\"jess\":\"#06BF7F\",\"jess tasks\":\"#785F1A\",\"marine estate authority website\":\"#FCD977\",\"marine uat\":\"#BF982A\",\"mission biosecurity\":\"#FDE9AF\",\"mission biosecurity service requests - 72 hrs\":\"#FCC838\",\"norton project\":\"#22636B\",\"nrar decision tree project\":\"#82DFE9\",\"ombo-discovery\":\"#369FAA\",\"psc - thoughtspot\":\"#B5ECF2\",\"sharksmart\":\"#48D1E0\",\"sharksmart service requests - 79hr\":\"#163772\",\"snowyhydro\":\"#71A1F4\",\"tocal\":\"#2359B6\",\"tocal service requests -10\":\"#ABC7F9\",\"tocal_uat\":\"#2E75F0\",\"Total Bug Counter\":\"#48D1E0\",\"0c568520-00d4-4dd7-988f-50e237ebe30f\":\"#2E75F0\",\"Total Non-bug Counter\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"Project Name\":{},\"Total Bug Counter\":{},\"Total Non-bug Counter\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_8
+  - answer:
+      name: Days to Close by Issue Priority
+      description: Gives an indication of how Issue Priority impacts the time to close.
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      formulas:
+      - id: Bug Counter
+        name: Bug Counter
+        expr: "if ( [Issue Type] = 'bug' ) then 1 else 0"
+      - id: Non-bug Counter
+        name: Non-bug Counter
+        expr: "if ( [Issue Type] = 'bug' ) then 0 else 1"
+      search_query: "[Days To Close] [Issue Priority] sort by [Days To Close] descending"
+      answer_columns:
+      - name: Average Days To Close
+      - name: Issue Priority
+      table:
+        table_columns:
+        - column_id: Issue Priority
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Average Days To Close
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Issue Priority
+        - Average Days To Close
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: PIE
+        chart_columns:
+        - column_id: Issue Priority
+        - column_id: Average Days To Close
+        axis_configs:
+        - x:
+          - Issue Priority
+          y:
+          - Average Days To Close
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":4.0},\"axisProperties\":{\"73e26f0a-4b6f-4128-9291-5a045ef4ffd7\":{\"linkedColumns\":[\"Average Days To Close\"],\"axisType\":\"Y\",\"isOpposite\":false},\"96967ce6-046e-4e88-8b53-bf69eef84930\":{\"linkedColumns\":[\"Issue Priority\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Average Days To Close\":\"#2E75F0\",\"low\":\"#06BF7F\",\"highest\":\"#FCC838\",\"medium\":\"#82DFE9\",\"lowest\":\"#48D1E0\",\"high\":\"#71A1F4\"},\"version\":\"V3\",\"columnProperties\":{\"Issue Priority\":{},\"Average Days To Close\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_9
+  - answer:
+      name: Days to Close by Creation Date and Issue Priority
+      description: Gives an indication of how Issue Priority impacts the time to close over creation date
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      formulas:
+      - id: Bug Counter
+        name: Bug Counter
+        expr: "if ( [Issue Type] = 'bug' ) then 1 else 0"
+      - id: Non-bug Counter
+        name: Non-bug Counter
+        expr: "if ( [Issue Type] = 'bug' ) then 0 else 1"
+      search_query: "[Days To Close] [Issue Priority] sort by [Issue Resolution Date] [Issue Resolution Date].monthly [Issue Date Created] [Issue Date Created].monthly"
+      answer_columns:
+      - name: Month(Issue Date Created)
+      - name: Average Days To Close
+      - name: Issue Priority
+      - name: Month(Issue Resolution Date)
+      table:
+        table_columns:
+        - column_id: Issue Priority
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Month(Issue Resolution Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Month(Issue Date Created)
+          headline_aggregation: MIN-MAX
+        - column_id: Average Days To Close
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Issue Priority
+        - Month(Issue Resolution Date)
+        - Month(Issue Date Created)
+        - Average Days To Close
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Issue Priority
+        - column_id: Month(Issue Resolution Date)
+        - column_id: Average Days To Close
+        axis_configs:
+        - x:
+          - Month(Issue Resolution Date)
+          y:
+          - Average Days To Close
+          color:
+          - Issue Priority
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"responsiveLayoutPreference\":3.0,\"chartSpecific\":{}},\"axisProperties\":{\"73e26f0a-4b6f-4128-9291-5a045ef4ffd7\":{\"linkedColumns\":[\"Average Days To Close\"],\"axisType\":\"Y\",\"isOpposite\":false},\"96967ce6-046e-4e88-8b53-bf69eef84930\":{\"linkedColumns\":[\"Month(Issue Resolution Date)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"high\":\"#2E75F0\",\"highest\":\"#48D1E0\",\"low\":\"#FCC838\",\"lowest\":\"#06BF7F\",\"medium\":\"#8C62F5\"},\"version\":\"V3\",\"columnProperties\":{\"Issue Priority\":{},\"Month(Issue Resolution Date)\":{},\"Month(Issue Date Created)\":{},\"Average Days To Close\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_10
+  - answer:
+      name: Days Open by Issue Priority (Open Issues) over Time
+      description: "Gives an indication of how Issue Priority impacts the days open for open issues only, showing the trend over time of Date Created"
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      formulas:
+      - id: Bug Counter
+        name: Bug Counter
+        expr: "if ( [Issue Type] = 'bug' ) then 1 else 0"
+      - id: Non-bug Counter
+        name: Non-bug Counter
+        expr: "if ( [Issue Type] = 'bug' ) then 0 else 1"
+      search_query: "[Issue Priority] [Days Open] [Issue Status] != 'done' [Issue Date Created] [Issue Date Created].monthly"
+      answer_columns:
+      - name: Issue Status
+      - name: Average Days Open
+      - name: Month(Issue Date Created)
+      - name: Issue Priority
+      table:
+        table_columns:
+        - column_id: Issue Priority
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Month(Issue Date Created)
+          headline_aggregation: MIN-MAX
+        - column_id: Average Days Open
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Issue Priority
+        - Month(Issue Date Created)
+        - Average Days Open
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Average Days Open
+        - column_id: Month(Issue Date Created)
+        - column_id: Issue Priority
+        axis_configs:
+        - x:
+          - Month(Issue Date Created)
+          y:
+          - Average Days Open
+          color:
+          - Issue Priority
+        locked: false
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"responsiveLayoutPreference\":3.0,\"chartSpecific\":{}},\"axisProperties\":{\"7a38f57d-6cde-41ab-b884-05437f5c94ec\":{\"linkedColumns\":[\"Average Days Open\"],\"axisType\":\"Y\",\"isOpposite\":false},\"e739ba98-2fcd-4cf4-ac7e-e29b59aa6f95\":{\"linkedColumns\":[\"Month(Issue Date Created)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"{null}\":\"#2E75F0\",\"high\":\"#48D1E0\",\"highest\":\"#FCC838\",\"low\":\"#06BF7F\",\"medium\":\"#8C62F5\"},\"version\":\"V3\",\"columnProperties\":{\"Issue Priority\":{},\"Month(Issue Date Created)\":{},\"Average Days Open\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_11
+  - answer:
+      name: Issue Count by Resolution Date
+      description: Indicates the number of issues that ware being delivered over time. Ideally the line will be trending upwards to incdicate more issues are being closed
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      search_query: "[Issue Resolution Date] [Issue Resolution Date].weekly unique count [Issue Key]"
+      answer_columns:
+      - name: Week(Issue Resolution Date)
+      - name: Unique Number of Issue Key
+      table:
+        table_columns:
+        - column_id: Week(Issue Resolution Date)
+          headline_aggregation: MIN-MAX
+        - column_id: Unique Number of Issue Key
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Week(Issue Resolution Date)
+        - Unique Number of Issue Key
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Week(Issue Resolution Date)
+        - column_id: Unique Number of Issue Key
+        axis_configs:
+        - x:
+          - Week(Issue Resolution Date)
+          y:
+          - Unique Number of Issue Key
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"29d09dcf-3f13-41bb-9c54-00deb24f2bc8\":{\"linkedColumns\":[\"Unique Number of Issue Key\"],\"axisType\":\"Y\",\"isOpposite\":false,\"name\":\"Issue Count\"},\"02f2fca4-43ef-459a-badb-b72a4bce9160\":{\"linkedColumns\":[\"Week(Issue Resolution Date)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Unique Number of Issue Key\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"Week(Issue Resolution Date)\":{},\"Unique Number of Issue Key\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_12
+  - answer:
+      name: Number of comments and Days Open by Issue
+      description: "Identifies issues that have been open for an extended period, and issues that have a high number of comments."
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      search_query: "[Issue Key] unique count [Comment ID] [Days Open] sort by unique count [Comment ID] descending"
+      answer_columns:
+      - name: Issue Key
+      - name: Average Days Open
+      - name: Unique Number of Comment ID
+      table:
+        table_columns:
+        - column_id: Issue Key
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Unique Number of Comment ID
+          headline_aggregation: TABLE_AGGR
+        - column_id: Average Days Open
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Issue Key
+        - Unique Number of Comment ID
+        - Average Days Open
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: SCATTER
+        chart_columns:
+        - column_id: Issue Key
+        - column_id: Unique Number of Comment ID
+        - column_id: Average Days Open
+        axis_configs:
+        - x:
+          - Average Days Open
+          y:
+          - Unique Number of Comment ID
+          category:
+          - Issue Key
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"responsiveLayoutPreference\":4.0,\"chartSpecific\":{},\"isZoomed\":false},\"axisProperties\":{\"4b9443da-be25-4279-9021-49c9ec1c931b\":{\"linkedColumns\":[\"Unique Number of Comment ID\"],\"axisType\":\"Y\",\"isOpposite\":false},\"56904abe-5a97-489b-b153-8362c7b39cb5\":{\"linkedColumns\":[\"Average Days Open\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Average Days Open\":\"#2E75F0\",\"Unique Number of Comment ID\":\"#48D1E0\"},\"version\":\"V3\",\"columnProperties\":{\"Issue Key\":{},\"Unique Number of Comment ID\":{},\"Average Days Open\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_13
+  - answer:
+      name: Issues Created
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      search_query: "[Creator] unique count [Issue Key] sort by unique count [Issue Key] descending"
+      answer_columns:
+      - name: Unique Number of Issue Key
+      - name: Creator
+      table:
+        table_columns:
+        - column_id: Creator
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Unique Number of Issue Key
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Creator
+        - Unique Number of Issue Key
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: Unique Number of Issue Key
+        - column_id: Creator
+        axis_configs:
+        - x:
+          - Creator
+          y:
+          - Unique Number of Issue Key
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"e7c2719d-62ab-4154-a384-2d486322553b\":{\"linkedColumns\":[\"Unique Number of Issue Key\"],\"axisType\":\"Y\",\"isOpposite\":false,\"name\":\"Issue Count\"},\"e99799e2-b925-4494-9a80-4b728157de1d\":{\"linkedColumns\":[\"Creator\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Unique Number of Issue Key\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"Creator\":{},\"Unique Number of Issue Key\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_14
+  - answer:
+      name: Issue Comments
+      description: Identifies issues with a high number of comments
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      search_query: "[Issue Key] unique count [Comment ID] sort by unique count [Comment ID] descending"
+      answer_columns:
+      - name: Unique Number of Comment ID
+      - name: Issue Key
+      table:
+        table_columns:
+        - column_id: Issue Key
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Unique Number of Comment ID
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Issue Key
+        - Unique Number of Comment ID
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: Issue Key
+        - column_id: Unique Number of Comment ID
+        axis_configs:
+        - x:
+          - Issue Key
+          y:
+          - Unique Number of Comment ID
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":4.0},\"axisProperties\":{\"22ec814f-1c14-4123-bacb-14a137d2f435\":{\"linkedColumns\":[\"Unique Number of Comment ID\"],\"axisType\":\"Y\",\"isOpposite\":false,\"name\":\"Number of Comments\"},\"1a238cc9-f17d-4271-8a93-e50d47fc741f\":{\"linkedColumns\":[\"Issue Key\"],\"axisType\":\"X\",\"name\":\"Issue\"}},\"systemSeriesColors\":{\"Unique Number of Comment ID\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"Issue Key\":{},\"Unique Number of Comment ID\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_15
+  - answer:
+      name: Time Logged (hrs) versus Estimated (hrs)
+      description: Identifies issues where estimated and actual time differ
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      search_query: "[Issue Key] [Time Estimate (Hrs)] [Time Original Estimate (Hrs)] [Time Logged (Hrs)] sort by [Time Logged (Hrs)] descending"
+      answer_columns:
+      - name: Issue Key
+      - name: Total Time Estimate (Hrs)
+      - name: Total Time Logged (Hrs)
+      - name: Total Time Original Estimate (Hrs)
+      table:
+        table_columns:
+        - column_id: Issue Key
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Total Time Estimate (Hrs)
+          headline_aggregation: TABLE_AGGR
+        - column_id: Total Time Original Estimate (Hrs)
+          headline_aggregation: TABLE_AGGR
+        - column_id: Total Time Logged (Hrs)
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Issue Key
+        - Total Time Estimate (Hrs)
+        - Total Time Original Estimate (Hrs)
+        - Total Time Logged (Hrs)
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: Total Time Logged (Hrs)
+        - column_id: Total Time Original Estimate (Hrs)
+        - column_id: Issue Key
+        - column_id: Total Time Estimate (Hrs)
+        axis_configs:
+        - x:
+          - Issue Key
+          y:
+          - Total Time Logged (Hrs)
+          - Total Time Original Estimate (Hrs)
+          - Total Time Estimate (Hrs)
+        locked: true
+        client_state: "{\"seriesColors\":{\"Total Time Estimate (Hrs)\":\"#2E75F0\",\"Total Time Original Estimate (Hrs)\":\"#48D1E0\",\"Total Time Logged (Hrs)\":\"#f04152\"},\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"responsiveLayoutPreference\":4.0,\"chartSpecific\":{},\"visibleSeriesNames\":[\"Total Time Logged (Hrs)\",\"Total Time Estimate (Hrs)\"]},\"axisProperties\":{\"a3033785-b126-415f-af96-b450f88fc76b\":{\"linkedColumns\":[\"Total Time Estimate (Hrs)\",\"Total Time Logged (Hrs)\",\"Total Time Original Estimate (Hrs)\"],\"axisType\":\"Y\",\"isOpposite\":false},\"d7837b73-5367-4ebc-b0dd-ef76219fa106\":{\"linkedColumns\":[\"Issue Key\"],\"axisType\":\"X\",\"name\":\"Issue\"}},\"systemSeriesColors\":{\"Total Time Estimate (Hrs)\":\"#2E75F0\",\"Total Time Original Estimate (Hrs)\":\"#48D1E0\",\"Total Time Logged (Hrs)\":\"#FCC838\"},\"version\":\"V3\",\"columnProperties\":{\"Issue Key\":{},\"Total Time Estimate (Hrs)\":{},\"Total Time Original Estimate (Hrs)\":{},\"Total Time Logged (Hrs)\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_16
+  - answer:
+      name: Total Work Logged By Date
+      tables:
+      - id: JIRA R2.0
+        name: JIRA R2.0
+      search_query: "[Work Logged (Hrs)] [Date Work Logged] [Date Work Logged].daily"
+      answer_columns:
+      - name: Day(Date Work Logged)
+      - name: Total Work Logged (Hrs)
+      table:
+        table_columns:
+        - column_id: Day(Date Work Logged)
+          headline_aggregation: MIN-MAX
+        - column_id: Total Work Logged (Hrs)
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - Day(Date Work Logged)
+        - Total Work Logged (Hrs)
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Day(Date Work Logged)
+        - column_id: Total Work Logged (Hrs)
+        axis_configs:
+        - x:
+          - Day(Date Work Logged)
+          y:
+          - Total Work Logged (Hrs)
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"cc684fd4-e90f-41c1-864f-2676c962e3ff\":{\"linkedColumns\":[\"Total Work Logged (Hrs)\"],\"axisType\":\"Y\",\"isOpposite\":false},\"7af7dfd5-7d67-4417-a692-d6b21ea09d1c\":{\"linkedColumns\":[\"Day(Date Work Logged)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Total Work Logged (Hrs)\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"Day(Date Work Logged)\":{},\"Total Work Logged (Hrs)\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_17
+  - answer:
+      name: Total TIME_SPENT_SECONDS by KEY and DISPLAY_NAME
+      tables:
+      - id: JIRA_ISSUE
+        name: JIRA_ISSUE
+      - id: JIRA_ISSUE_WORKLOG
+        name: JIRA_ISSUE_WORKLOG
+      - id: JIRA_USER
+        name: JIRA_USER
+      joins:
+      - id: WorkLog_AUTHOR_User
+        name: WorkLog_AUTHOR_User
+        source: JIRA_ISSUE_WORKLOG
+        destination: JIRA_USER
+      - id: WorkLog_ISSUE
+        name: WorkLog_ISSUE
+        source: JIRA_ISSUE_WORKLOG
+        destination: JIRA_ISSUE
+      table_paths:
+      - id: JIRA_ISSUE_1
+        table: JIRA_ISSUE
+        join_path:
+        - join:
+          - WorkLog_ISSUE
+      - id: JIRA_ISSUE_WORKLOG_1
+        table: JIRA_ISSUE_WORKLOG
+        join_path:
+        - {}
+      - id: JIRA_USER_1
+        table: JIRA_USER
+        join_path:
+        - join:
+          - WorkLog_AUTHOR_User
+      search_query: "[JIRA_ISSUE_1::KEY] [JIRA_USER_1::DISPLAY_NAME] [JIRA_ISSUE_WORKLOG_1::TIME_SPENT_SECONDS]"
+      answer_columns:
+      - name: DISPLAY_NAME
+      - name: KEY
+      - name: Total TIME_SPENT_SECONDS
+      table:
+        table_columns:
+        - column_id: KEY
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: DISPLAY_NAME
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Total TIME_SPENT_SECONDS
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - KEY
+        - DISPLAY_NAME
+        - Total TIME_SPENT_SECONDS
+        wrap_table_header: true
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: STACKED_COLUMN
+        chart_columns:
+        - column_id: KEY
+        - column_id: DISPLAY_NAME
+        - column_id: Total TIME_SPENT_SECONDS
+        axis_configs:
+        - x:
+          - KEY
+          y:
+          - Total TIME_SPENT_SECONDS
+          color:
+          - DISPLAY_NAME
+        locked: true
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"responsiveLayoutPreference\":4.0,\"chartSpecific\":{}},\"axisProperties\":{\"c3f74069-35c4-4fb9-a8b4-51bee87acb47\":{\"linkedColumns\":[\"Total TIME_SPENT_SECONDS\"],\"axisType\":\"Y\",\"isOpposite\":false},\"6551f299-0280-4a2e-9c13-a62ec6e108f9\":{\"linkedColumns\":[\"KEY\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Total TIME_SPENT_SECONDS\":\"#FCC838\",\"charissa ramirez\":\"#56D3A8\",\"dan.caleo\":\"#06BF7F\",\"justin lucas\":\"#FCD977\",\"ken mortimer\":\"#FCC838\",\"melinda france\":\"#82DFE9\",\"paul chan\":\"#48D1E0\",\"sibylla macdonald\":\"#71A1F4\",\"steven.thorne\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"KEY\":{},\"DISPLAY_NAME\":{},\"Total TIME_SPENT_SECONDS\":{}}}"
+      display_mode: CHART_MODE
+    id: Viz_18
+  layout:
+    tiles:
+    - visualization_id: Viz_5
+      size: LARGE_SMALL
+    - visualization_id: Viz_14
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_7
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_6
+      size: LARGE_SMALL
+    - visualization_id: Viz_4
+      size: LARGE_SMALL
+    - visualization_id: Viz_2
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_1
+      size: SMALL
+    - visualization_id: Viz_9
+      size: SMALL
+    - visualization_id: Viz_8
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_3
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_10
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_11
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_12
+      size: LARGE_SMALL
+    - visualization_id: Viz_13
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_15
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_16
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_17
+      size: MEDIUM_SMALL
+guid: fb566439-f1bc-419a-bd36-8988c07c20c7

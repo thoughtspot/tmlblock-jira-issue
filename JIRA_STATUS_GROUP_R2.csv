@@ -1,0 +1,34 @@
+STATUS_CATEGORY,STATUS_GROUP
+to do,To Do
+harper stone testing,Internal Testing
+in progress,In Progress
+qa,Internal Testing
+dpi testing,Client Testing
+blocked,Blocked
+ready for dev,To Do
+blocked/ on hold,Blocked
+uat ready,Internal Testing
+dpi qa,Client Testing
+internal qa,Internal Testing
+done,Done
+client testing,Client Testing
+uts qa,Client Testing
+tocal testing,Client Testing
+on hold,On Hold
+requested,Raised By Client
+verification by dpi,Client Testing
+approved to commence,To Do
+client qa,Client Testing
+raised by client,Raised By Client
+rachael to do stuff,Client Testing
+internal testing,Internal Testing
+testing,Internal Testing
+selected for development,To Do
+ready to commence,To Do
+ready for review,Internal Testing
+pending approval,Client Testing
+ready to estimate,To Do
+ready for estimate,To Do
+waiting for approval,Client Testing
+ready for testing,Internal Testing
+rachael to do,Client Testing
