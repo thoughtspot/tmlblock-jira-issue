@@ -1,0 +1,20 @@
+SpotApp table;SpotApp columns;SpotApp column datatype;SpotApp column description;SpotApp mandatory column
+JIRA_ISSUES;ASSIGNEE;VARCHAR;This is to map the column ASSIGNEE;Yes
+JIRA_ISSUES;CREATED;DATE_TIME;This is to map the column CREATED;Yes
+JIRA_ISSUES;CREATOR;VARCHAR;This is to map the column CREATOR;Yes
+JIRA_ISSUES;DUE_DATE;DATE;This describes the column DUE_DATE;Yes
+JIRA_ISSUES;ID;INT64;This describes the column ID;Yes
+JIRA_ISSUES;ISSUE_TYPE_NAME;VARCHAR;This describes the column ISSUE_TYPE_NAME;Yes
+JIRA_ISSUES;KEY;VARCHAR;This is to map the column KEY;Yes
+JIRA_ISSUES;PRIORITY_NAME;VARCHAR;This describes the column PRIORITY_NAME;Yes
+JIRA_ISSUES;PROJECT_KEY;VARCHAR;This describes the column PROJECT_KEY;Yes
+JIRA_ISSUES;PROJECT_NAME;VARCHAR;This describes the column PROJECT_NAME;Yes
+JIRA_ISSUES;REPORTER;VARCHAR;This describes the column REPORTER;Yes
+JIRA_ISSUES;RESOLUTION_DATE;DATE_TIME;This is to map the column RESOLUTION_DATE;Yes
+JIRA_ISSUES;RESOLUTION_NAME;VARCHAR;This describes the column RESOLUTION_NAME;Yes
+JIRA_ISSUES;STATUS_NAME;VARCHAR;This is to map the column STATUS_NAME;Yes
+JIRA_ISSUES;SUMMARY;VARCHAR;This describes the column SUMMARY;Yes
+JIRA_ISSUES;TIME_ESTIMATE;INT64;This is to map the column TIME_ESTIMATE;Yes
+JIRA_ISSUES;TIME_ORIGINAL_ESTIMATE;INT64;This is to map the column TIME_ORIGINAL_ESTIMATE;Yes
+JIRA_ISSUES;TIME_SPENT_SECONDS;INT64;This is to map the column TIME_SPENT_SECONDS;Yes
+JIRA_ISSUES;UPDATED;DATE_TIME;This describes the column UPDATED;Yes
