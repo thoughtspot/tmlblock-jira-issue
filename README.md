@@ -1,42 +1,58 @@
 # TML BLOCKS - Jira
 
-With the JIRA TML Blocks, managers have access to the huge wealth of operational and team performance data locked within JIRA, all with the ease of ThoughtSpot to be able to search, drill in and automatically discover their own data insights.
+With the JIRA TML Blocks, managers have access to the huge wealth of operational and team performance data locked within JIRA, all with the ease of ThoughtSpot to be able to search, drill in and automatically discover their own data insights.They are built on ThoughtSpot Modeling Language (TML) Blocks, which are pre-built pieces of code that are easy to download and implement directly from the product.
 
+The Jira Issue Management SpotApp mimics the Jira data model. When you deploy it, ThoughtSpot creates several Worksheets, Answers, and Liveboards, based on your Jira data in your cloud data warehouse.
+
+Use the Jira Issue Management SpotApp to track the number of Jira tickets submitted, and the efficiency of how they are resolved. This can help you determine what part of the workflow causes the most delays, and how each team member is performing at resolving tickets.
  
  # Artifacts 
- 
- ## Snowflake DDL
- - SNOWFLAKE_DB_CREATE_SCRIPT.sql
- - SNOWFLAKE_VIEWS.sql
 
-## Table Information
-- JIRA_STATUS_GROUP_ORDER_R2.csv
-- JIRA_STATUS_GROUP_R2.csv
-- JIRA_URL_R2.csv
+ [Jira Issue Management TML Blocks.zip](https://github.com/thoughtspot/tmlblock-jira-issue/blob/main/Jira%20Issue%20Management%20TML%20Blocks.zip): These tml files contains templates for tables, worksheets, answers, and liveboards for the Jira SpotApp
+[Jira Issue Management_schema.csv](https://github.com/thoughtspot/tmlblock-jira-issue/blob/main/Jira%20Issue%20Management_schema.csv): The following table describes the schema for the Redshift Performance and Consumption SpotApp. TML template files for the SpotApp.
+Update ThoughtSpot_DBScript.sql: The following SQL commands help standardize data types and column names.
 
-## ThoughtSpot SQL Script 
-- ThoughtSpot_DBScript.sql
+- **Ensure Column Compatibility**: Verify that your columns match the required column type listed in the schema for your SpotApp.
+- **Sync Data**: Synchronize all tables and columns from Jira to your cloud data warehouse. While it's possible to sync only the required tables and columns, ThoughtSpot recommends syncing all tables and columns from Jira to ensure comprehensive data availability. The columns can be Jira’s out-of-the-box columns, or any custom columns you are using.
 
-## TML Files 
-- JIRA R2 - Issue Management.pinboard (2).tml
-- JIRA R2.0.worksheet (1).tml
+If you are using an ETL/ELT tool or working with another team in your organization to move data, it's advisable to sync all columns from the tables listed in the SpotApp.
+
+## Access and Permissions
+
+- **Unique Connection Name**: Ensure that the connection name for each new SpotApp is unique.
+- **Administrator Access to Jira**: Maintain administrator access to manage Jira resources.
+
+## Access to Jira Tables
+
+Ensure access to the following Jira tables in your cloud data warehouse. For more details, refer to the Jira Issue Management SpotApp schema:
+
+- `JIRA_ISSUES`
+- `ISSUE`
+- `PROJECT`
+- `PRIORITY`
+- `RESOLUTION`
+- `STATUS`
+- `ISSUE_TYPE`
+- `USER`
+- `ISSUE_FIELD_HISTORY`
+- `WORKLOG`
+
+## Run SQL Commands
+
+Execute the necessary SQL commands in your cloud data warehouse to properly configure the SpotApp. For specific commands, refer to the "Run SQL commands" section.
+
+The SQL files can be found here: [ThoughtSpot DBScript.sql](https://github.com/thoughtspot/tmlblock-jira-issue/blob/main/ThoughtSpot_DBScript.sql).
  
  # Implementation Steps 
- 
-**SnowFlake**
-- Use the DDL Scripts to create the tables and views in SnowFlake. 
+ Once you have downloaded the Zip file and have verified its contents, the implementation steps are as follows:
 
-**Extracting Jira Data**
-- Refer to the "Table Information" for the corresponding Tables and Data Items. 
+1. Log into your ThoughtSpot instance and create an Embrace connection to all of the relevant views.
+2. Import the TML for the worksheets and verify that it has all been imported without any errors.
+3. Import the TML for the pinboard and verify that it has all been imported without any errors.
+4. You are ready to start searching your Jira data!
 
-**ThoughtSpot**
-- Using Embrace connect to the Views specified in the Table Information csv files.
-- Execute the ThoughtSpot script to create the relationships in ThoughtSpot
+For detailed instructions on how to import TML files, refer to the [ThoughtSpot documentation](https://docs.thoughtspot.com/software/latest/tml-import-export-multiple).
 
-**TML BLocks**
-
-- Import the workshop zip "JIRA R2 - Issue Management.pinboard (2).tml" into Thoughtspot. 
-- Import the pinboard zip "JIRA R2.0.worksheet (1).tmlp" into Thoughtspot. 
 
 # Liveboard Screenshots 
 
