@@ -9,7 +9,7 @@ Use the Jira Issue Management SpotApp to track the number of Jira tickets submit
  # Artifacts 
 
 - [**Jira Issue Management TML Blocks.zip**](https://github.com/thoughtspot/tmlblock-jira-issue/blob/main/Jira%20Issue%20Management%20TML%20Blocks.zip): These tml files contains templates for tables, worksheets, answers, and liveboards for the Jira SpotApp
-- **[Jira Issue Management_schema.csv]**(https://github.com/thoughtspot/tmlblock-jira-issue/blob/main/Jira%20Issue%20Management_schema.csv): The following table describes the schema for the Redshift Performance and Consumption SpotApp. TML template files for the SpotApp.
+-[**Jira Issue Management_schema.csv**](https://github.com/thoughtspot/tmlblock-jira-issue/blob/main/Jira%20Issue%20Management_schema.csv): The following table describes the schema for the Redshift Performance and Consumption SpotApp. TML template files for the SpotApp.
 Update ThoughtSpot_DBScript.sql: The following SQL commands help standardize data types and column names.
 - **Ensure Column Compatibility**: Verify that your columns match the required column type listed in the schema for your SpotApp.
 - **Sync Data**: Synchronize all tables and columns from Jira to your cloud data warehouse. While it's possible to sync only the required tables and columns, ThoughtSpot recommends syncing all tables and columns from Jira to ensure comprehensive data availability. The columns can be Jira’s out-of-the-box columns, or any custom columns you are using.
