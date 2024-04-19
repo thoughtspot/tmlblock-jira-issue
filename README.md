@@ -9,21 +9,30 @@ Use the Jira Issue Management SpotApp to track the number of Jira tickets submit
  # Artifacts 
 
 - [**Jira Issue Management TML Blocks.zip**](https://github.com/thoughtspot/tmlblock-jira-issue/blob/main/Jira%20Issue%20Management%20TML%20Blocks.zip): These tml files contains templates for tables, worksheets, answers, and liveboards for the Jira SpotApp
--[**Jira Issue Management_schema.csv**](https://github.com/thoughtspot/tmlblock-jira-issue/blob/main/Jira%20Issue%20Management_schema.csv): The following table describes the schema for the Redshift Performance and Consumption SpotApp. TML template files for the SpotApp.
-Update ThoughtSpot_DBScript.sql: The following SQL commands help standardize data types and column names.
-- **Ensure Column Compatibility**: Verify that your columns match the required column type listed in the schema for your SpotApp.
-- **Sync Data**: Synchronize all tables and columns from Jira to your cloud data warehouse. While it's possible to sync only the required tables and columns, ThoughtSpot recommends syncing all tables and columns from Jira to ensure comprehensive data availability. The columns can be Jira’s out-of-the-box columns, or any custom columns you are using.
+- [**Jira Issue Management_schema.csv**](https://github.com/thoughtspot/tmlblock-jira-issue/blob/main/Jira%20Issue%20Management_schema.csv): The following table describes the schema
+- [ThoughtSpot DBScript.sql](https://github.com/thoughtspot/tmlblock-jira-issue/blob/main/ThoughtSpot_DBScript.sql): Access required sql here
 
-If you are using an ETL/ELT tool or working with another team in your organization to move data, it's advisable to sync all columns from the tables listed in the SpotApp.
 
-## Access and Permissions
+# Prerequisites for Deploying the Jira Issue Management SpotApp
 
+Before you can deploy the Jira Issue Management SpotApp, you must complete the following prerequisites:
+
+## Review and Sync Data
+
+- **Review Required Data**: Examine the required tables and columns for the SpotApp.
+- **Ensure Column Compatibility**: Ensure that your columns match the required column type listed in the schema for your SpotApp.
+- **Sync Data**: Synchronize all tables and columns from Jira to your cloud data warehouse. While only specific tables and columns may be required, ThoughtSpot recommends syncing all tables and columns from Jira to ensure comprehensive data availability. The columns can be Jira’s out-of-the-box columns, or any custom columns you are using.
+- **ETL/ELT and Team Collaboration**: If you are using an ETL/ELT tool or working with another team in your organization, sync all columns from the tables listed in the SpotApp.
+
+## Credentials and Permissions
+
+- **Obtain Credentials**: Obtain the necessary credentials and SYSADMIN privileges to connect to your cloud data warehouse. Ensure the data warehouse contains the data ThoughtSpot will use to create Answers, Liveboards, and Worksheets. Refer to the connection reference for your cloud data warehouse for information about required credentials.
 - **Unique Connection Name**: Ensure that the connection name for each new SpotApp is unique.
 - **Administrator Access to Jira**: Maintain administrator access to manage Jira resources.
 
 ## Access to Jira Tables
 
-Ensure access to the following Jira tables in your cloud data warehouse. For more details, refer to the Jira Issue Management SpotApp schema:
+Ensure access to the following Jira tables in your cloud data warehouse for more details, refer to the Jira Issue Management SpotApp schema:
 
 - `JIRA_ISSUES`
 - `ISSUE`
